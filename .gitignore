@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyc
+
+# Virtual environments
+.env
+.venv
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+notes
+
+# Node modules (if any)
+node_modules/
+
+# Frontend generated artifacts
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Server runtime artifacts
+Server/storage/
+Server/tests/*.txt

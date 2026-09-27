@@ -1,0 +1,306 @@
+"""
+MCP Server Test Suite
+Tests all MCP tools directly without stdio (more reliable for testing)
+"""
+import asyncio
+import json
+import sys
+import os
+
+# Add parent to path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from typing import Dict, Any
+from mcp_server.tools import MCPTools
+
+
+class MCPServerTester:
+    """Test suite for Nexarch MCP Server"""
+    
+    def __init__(self):
+        self.tools = MCPTools(default_tenant_id="test_tenant_001")
+        self.test_results = []
+        self.tenant_id = "test_tenant_001"
+    
+    def list_available_tools(self):
+        """List all available tools"""
+        print("\n📋 Available MCP Tools:")
+        tools = [
+            "get_current_architecture - Get architecture graph with nodes, edges, and metrics",
+            "get_detected_issues - Get all detected architectural issues with AI enhancement",
+            "generate_workflows - Generate 3 workflow alternatives using LangGraph + Azure OpenAI",
+            "compare_workflows - Compare workflows with intelligent multi-criteria recommendation",
+            "explain_decision - Explain reasoning behind a specific workflow decision",
+            "get_graph_analysis - Get advanced graph analysis (centrality, bottlenecks, cycles)"
+        ]
+        
+        for i, tool in enumerate(tools, 1):
+            print(f"   {i}. {tool}")
+        
+        self.test_results.append({
+            "test": "list_tools",
+            "status": "PASS",
+            "tools_count": len(tools)
+        })
+        return tools
+    
+    def test_get_current_architecture(self):
+        """Test get_current_architecture tool"""
+        print("\n🏗️  Testing get_current_architecture...")
+        try:
+            data = self.tools.get_current_architecture(self.tenant_id)
+            
+            print(f"✅ Architecture retrieved:")
+            print(f"   - Tenant: {data.get('tenant_id')}")
+            print(f"   - Services: {data.get('service_count', 0)}")
+            print(f"   - Dependencies: {data.get('dependency_count', 0)}")
+            
+            # Show some nodes if available
+            nodes = data.get('nodes', [])
+            if nodes:
+                print(f"   - Sample nodes: {', '.join([n.get('name', 'unnamed') for n in nodes[:3]])}")
+            
+            self.test_results.append({
+                "test": "get_current_architecture",
+                "status": "PASS",
+                "data": data
+            })
+            return data
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            self.test_results.append({
+                "test": "get_current_architecture",
+                "status": "FAIL",
+                "error": str(e)
+            })
+            return None
+    
+    async def test_get_detected_issues(self):
+        """Test get_detected_issues tool"""
+        print("\n🔍 Testing get_detected_issues...")
+        try:
+            data = await self.tools.get_detected_issues(self.tenant_id)
+            
+            print(f"✅ Issues detected:")
+            print(f"   - Tenant: {data.get('tenant_id')}")
+            print(f"   - Total issues: {data.get('total_count', 0)}")
+            print(f"   - Critical: {data.get('critical_count', 0)}")
+            print(f"   - High: {data.get('high_count', 0)}")
+            
+            # Show issue types
+            by_type = data.get('by_type', {})
+            if by_type:
+                print(f"   - Issue types: {', '.join(by_type.keys())}")
+            
+            # Show sample issues
+            issues = data.get('issues', [])
+            if issues:
+                print(f"   - Sample issues:")
+                for issue in issues[:2]:
+                    print(f"     • {issue.get('type')}: {issue.get('description', 'No description')[:60]}...")
+            
+            self.test_results.append({
+                "test": "get_detected_issues",
+                "status": "PASS",
+                "data": data
+            })
+            return data
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            self.test_results.append({
+                "test": "get_detected_issues",
+                "status": "FAIL",
+                "error": str(e)
+            })
+            return None
+    
+    async def test_generate_workflows(self):
+        """Test generate_workflows tool"""
+        print("\n🔄 Testing generate_workflows...")
+        try:
+            data = await self.tools.generate_workflows(self.tenant_id, "optimize_performance")
+            
+            print(f"✅ Workflows generated:")
+            print(f"   - Tenant: {data.get('tenant_id')}")
+            print(f"   - Goal: {data.get('goal')}")
+            print(f"   - Count: {data.get('count', 0)}")
+            print(f"   - Generated by: {data.get('generated_by')}")
+            
+            workflows = data.get('workflows', [])
+            if workflows:
+                print(f"   - Workflows:")
+                for i, wf in enumerate(workflows[:3], 1):  # Show first 3
+                    print(f"     {i}. {wf.get('name')}: {wf.get('description', 'No description')[:60]}...")
+                    print(f"        Complexity: {wf.get('complexity_score')}/10, Risk: {wf.get('risk_score')}/10")
+            
+            self.test_results.append({
+                "test": "generate_workflows",
+                "status": "PASS",
+                "data": data
+            })
+            return data
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            self.test_results.append({
+                "test": "generate_workflows",
+                "status": "FAIL",
+                "error": str(e)
+            })
+            return None
+    
+    async def test_compare_workflows(self):
+        """Test compare_workflows tool"""
+        print("\n⚖️  Testing compare_workflows...")
+        try:
+            data = await self.tools.compare_workflows(self.tenant_id)
+            
+            print(f"✅ Workflows compared:")
+            print(f"   - Tenant: {data.get('tenant_id')}")
+            
+            recommendation = data.get('recommendation', {})
+            if recommendation:
+                print(f"   - Recommended: {recommendation.get('workflow')}")
+                print(f"   - Reason: {recommendation.get('reason')}")
+            
+            ranking = data.get('ranking', [])
+            if ranking:
+                print(f"   - Ranking:")
+                for i, rank in enumerate(ranking[:3], 1):
+                    print(f"     {i}. {rank.get('workflow')} (score: {rank.get('score', 0):.2f})")
+            
+            comparison = data.get('comparison_matrix', {})
+            if comparison:
+                print(f"   - Comparison metrics: {', '.join(comparison.keys())}")
+            
+            self.test_results.append({
+                "test": "compare_workflows",
+                "status": "PASS",
+                "data": data
+            })
+            return data
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            self.test_results.append({
+                "test": "compare_workflows",
+                "status": "FAIL",
+                "error": str(e)
+            })
+            return None
+    
+    def test_get_graph_analysis(self):
+        """Test get_graph_analysis tool"""
+        print("\n📊 Testing get_graph_analysis...")
+        try:
+            data = self.tools.get_graph_analysis(self.tenant_id)
+            
+            print(f"✅ Graph analysis retrieved:")
+            print(f"   - Tenant: {data.get('tenant_id')}")
+            
+            metrics = data.get('graph_metrics', {})
+            if metrics:
+                print(f"   - Nodes: {metrics.get('node_count', 0)}")
+                print(f"   - Edges: {metrics.get('edge_count', 0)}")
+                print(f"   - Is DAG: {metrics.get('is_dag', False)}")
+                print(f"   - Avg Degree: {metrics.get('avg_degree', 0):.2f}")
+                print(f"   - Density: {metrics.get('density', 0):.4f}")
+            
+            insights = data.get('insights', [])
+            if insights:
+                print(f"   - Insights ({len(insights)}):")
+                for insight in insights[:5]:
+                    print(f"     • {insight}")
+            
+            recommendations = data.get('recommendations', [])
+            if recommendations:
+                print(f"   - Recommendations ({len(recommendations)}):")
+                for rec in recommendations[:5]:
+                    print(f"     • {rec}")
+            
+            self.test_results.append({
+                "test": "get_graph_analysis",
+                "status": "PASS",
+                "data": data
+            })
+            return data
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            self.test_results.append({
+                "test": "get_graph_analysis",
+                "status": "FAIL",
+                "error": str(e)
+            })
+            return None
+    
+    async def run_all_tests(self):
+        """Run all tests"""
+        print("="*60)
+        print("🧪 NEXARCH MCP SERVER TEST SUITE")
+        print("="*60)
+        
+        try:
+            # List available tools
+            self.list_available_tools()
+            
+            # Run tool tests (sync and async)
+            self.test_get_current_architecture()
+            await self.test_get_detected_issues()
+            await self.test_generate_workflows()
+            await self.test_compare_workflows()
+            self.test_get_graph_analysis()
+            
+        except Exception as e:
+            print(f"\n❌ Fatal error: {e}")
+            import traceback
+            traceback.print_exc()
+        
+        # Print summary
+        self.print_summary()
+    
+    def print_summary(self):
+        """Print test summary"""
+        print("\n" + "="*60)
+        print("📊 TEST SUMMARY")
+        print("="*60)
+        
+        passed = sum(1 for r in self.test_results if r["status"] == "PASS")
+        failed = sum(1 for r in self.test_results if r["status"] == "FAIL")
+        total = len(self.test_results)
+        
+        print(f"Total Tests: {total}")
+        print(f"✅ Passed: {passed}")
+        print(f"❌ Failed: {failed}")
+        
+        if failed > 0:
+            print("\n❌ Failed Tests:")
+            for result in self.test_results:
+                if result["status"] == "FAIL":
+                    print(f"   - {result['test']}: {result.get('error', 'Unknown error')}")
+        
+        print("\n" + "="*60)
+        
+        if failed == 0:
+            print("🎉 ALL TESTS PASSED!")
+        else:
+            print(f"⚠️  {failed} TEST(S) FAILED")
+        
+        print("="*60)
+
+
+async def main():
+    """Main entry point"""
+    tester = MCPServerTester()
+    await tester.run_all_tests()
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

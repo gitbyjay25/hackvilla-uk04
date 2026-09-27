@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexarch-sdk"
+version = "0.2.1"
+description = "Nexarch SDK for runtime architecture intelligence and observability"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Nexarch Team"}
+]
+license = {text = "MIT"}
+keywords = ["architecture", "observability", "fastapi", "monitoring", "tracing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: FastAPI",
+]
+
+dependencies = [
+    "fastapi>=0.100.0",
+    "starlette>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nexarch/nexarch-sdk"
+Documentation = "https://docs.nexarch.io"
+Repository = "https://github.com/nexarch/nexarch-sdk"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nexarch*"]
+
+[tool.setuptools.package-data]
+nexarch = ["*.json", "py.typed"]

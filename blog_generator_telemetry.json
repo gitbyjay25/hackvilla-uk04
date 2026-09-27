@@ -1,0 +1,3381 @@
+[
+  {
+    "type": "architecture_discovery",
+    "timestamp": "2026-04-02T12:42:50.743782",
+    "data": {
+      "service_name": "blog-generator-demo",
+      "service_type": "microservice",
+      "endpoints": [
+        {
+          "error": "Failed to discover endpoints: 'ExceptionMiddleware' object has no attribute 'routes'"
+        }
+      ],
+      "databases": [
+        {
+          "type": "cache",
+          "engine": "redis",
+          "discovered_from": "import:redis"
+        },
+        {
+          "type": "document",
+          "engine": "mongodb",
+          "discovered_from": "import:pymongo"
+        }
+      ],
+      "external_services": [],
+      "dependencies": {},
+      "architecture_patterns": {
+        "service_type": "mini-service",
+        "has_api_gateway": false,
+        "database_pattern": "database_per_service",
+        "has_circuit_breaker": false,
+        "has_rate_limiting": false,
+        "has_caching": true,
+        "has_authentication": false,
+        "middleware_stack": []
+      },
+      "discovered_at": "2026-04-02T12:42:50.743740"
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.509272",
+    "data": {
+      "trace_id": "253ebe5a-8fe6-45bf-b3f9-2463e7be24b3",
+      "span_id": "c1648979-8129-4fdc-9658-e8c977cb4102",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.509272",
+      "latency_ms": 1.5,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.535415",
+    "data": {
+      "trace_id": "830156a3-933e-47e2-a3f4-62423ba19c8c",
+      "span_id": "39a7327a-deb0-4284-b699-c0a8e4aa2d10",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.535415",
+      "latency_ms": 3.62,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/generate",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.561308",
+    "data": {
+      "trace_id": "1b8172fa-7382-4030-bc26-22c97286fb9b",
+      "span_id": "28fbe66f-32f9-4690-9b42-52ee8d6dd7ca",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.561308",
+      "latency_ms": 0.91,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.573931",
+    "data": {
+      "trace_id": "d853c553-27c9-4098-875b-4a74f9b1f0fc",
+      "span_id": "04ff654d-78ad-4a5c-be10-43c9bf75d81b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786/publish",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.573931",
+      "latency_ms": 0.95,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786/publish",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.586295",
+    "data": {
+      "trace_id": "d2dc76ec-f1b3-4c2a-888e-deb1251a9647",
+      "span_id": "69527787-e62f-42cd-84be-1c490562282c",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.586295",
+      "latency_ms": 0.89,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.623329",
+    "data": {
+      "trace_id": "43ad3b80-8791-480e-ab6c-4c3a27cbc5f4",
+      "span_id": "a5e8a250-d2e7-46b5-ad5c-4049d74d513b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "DELETE /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:01.623329",
+      "latency_ms": 1.0,
+      "status_code": 200,
+      "method": "DELETE",
+      "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.509272",
+    "data": {
+      "trace_id": "253ebe5a-8fe6-45bf-b3f9-2463e7be24b3",
+      "span_id": "c1648979-8129-4fdc-9658-e8c977cb4102",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.509234",
+      "end_time": "2026-04-02T12:43:01.510710",
+      "latency_ms": 1.4760000000000002,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/health",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/health",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 1.42,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.535415",
+    "data": {
+      "trace_id": "830156a3-933e-47e2-a3f4-62423ba19c8c",
+      "span_id": "39a7327a-deb0-4284-b699-c0a8e4aa2d10",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.535381",
+      "end_time": "2026-04-02T12:43:01.538972",
+      "latency_ms": 3.591,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "POST",
+        "path": "/blog-posts/generate",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/generate",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 3.52,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.561308",
+    "data": {
+      "trace_id": "1b8172fa-7382-4030-bc26-22c97286fb9b",
+      "span_id": "28fbe66f-32f9-4690-9b42-52ee8d6dd7ca",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.561280",
+      "end_time": "2026-04-02T12:43:01.562172",
+      "latency_ms": 0.892,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.85,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.573931",
+    "data": {
+      "trace_id": "d853c553-27c9-4098-875b-4a74f9b1f0fc",
+      "span_id": "04ff654d-78ad-4a5c-be10-43c9bf75d81b",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "POST /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786/publish",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.573901",
+      "end_time": "2026-04-02T12:43:01.574830",
+      "latency_ms": 0.929,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "POST",
+        "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786/publish",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786/publish",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.88,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.586295",
+    "data": {
+      "trace_id": "d2dc76ec-f1b3-4c2a-888e-deb1251a9647",
+      "span_id": "69527787-e62f-42cd-84be-1c490562282c",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.586266",
+      "end_time": "2026-04-02T12:43:01.587135",
+      "latency_ms": 0.869,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/blog-posts",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.82,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:01.623329",
+    "data": {
+      "trace_id": "43ad3b80-8791-480e-ab6c-4c3a27cbc5f4",
+      "span_id": "a5e8a250-d2e7-46b5-ad5c-4049d74d513b",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "DELETE /blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:01.623292",
+      "end_time": "2026-04-02T12:43:01.624273",
+      "latency_ms": 0.9810000000000001,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "DELETE",
+        "path": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/7ac37982-7e7e-437c-b22f-ad266a22a786",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.93,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "architecture_discovery",
+    "timestamp": "2026-04-02T12:43:40.040018",
+    "data": {
+      "service_name": "blog-generator-demo",
+      "service_type": "microservice",
+      "endpoints": [
+        {
+          "error": "Failed to discover endpoints: 'ExceptionMiddleware' object has no attribute 'routes'"
+        }
+      ],
+      "databases": [
+        {
+          "type": "cache",
+          "engine": "redis",
+          "discovered_from": "import:redis"
+        },
+        {
+          "type": "document",
+          "engine": "mongodb",
+          "discovered_from": "import:pymongo"
+        }
+      ],
+      "external_services": [],
+      "dependencies": {},
+      "architecture_patterns": {
+        "service_type": "mini-service",
+        "has_api_gateway": false,
+        "database_pattern": "database_per_service",
+        "has_circuit_breaker": false,
+        "has_rate_limiting": false,
+        "has_caching": true,
+        "has_authentication": false,
+        "middleware_stack": []
+      },
+      "discovered_at": "2026-04-02T12:43:40.039987"
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.113823",
+    "data": {
+      "trace_id": "68bde3d2-da39-4dea-9fdb-0f4b18405538",
+      "span_id": "7a1fcb1c-133a-4b1b-b099-53215945dae6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.113823",
+      "latency_ms": 1.49,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.152756",
+    "data": {
+      "trace_id": "8da0f51e-1183-4b44-bb33-657882c156cf",
+      "span_id": "4ab8e788-7d91-4c7d-acc7-4865fad7a587",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.152756",
+      "latency_ms": 3.63,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/generate",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.170215",
+    "data": {
+      "trace_id": "b122f7cf-e602-4612-a557-825b12fe3447",
+      "span_id": "8d8e5184-cffb-4b8f-acd4-25cd651f4154",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.170215",
+      "latency_ms": 1.14,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.193924",
+    "data": {
+      "trace_id": "3356832e-99ee-4c08-af2b-809f738655e4",
+      "span_id": "9a2236d4-1cc8-43af-9478-29c9fc9d6167",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b/publish",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.193924",
+      "latency_ms": 1.02,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b/publish",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.208167",
+    "data": {
+      "trace_id": "cf8093ae-a5e5-4409-a98c-2ee185c524e5",
+      "span_id": "ec185e1d-33da-49fc-b316-db118018397b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.208167",
+      "latency_ms": 0.96,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.249770",
+    "data": {
+      "trace_id": "ee8a4c1f-652a-4928-906a-140b30ac1582",
+      "span_id": "6a9d477e-7588-4b64-979a-c4f84a02cea8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "DELETE /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:43:47.249770",
+      "latency_ms": 0.95,
+      "status_code": 200,
+      "method": "DELETE",
+      "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.113823",
+    "data": {
+      "trace_id": "68bde3d2-da39-4dea-9fdb-0f4b18405538",
+      "span_id": "7a1fcb1c-133a-4b1b-b099-53215945dae6",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.113786",
+      "end_time": "2026-04-02T12:43:47.115252",
+      "latency_ms": 1.466,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/health",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/health",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 1.41,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.152756",
+    "data": {
+      "trace_id": "8da0f51e-1183-4b44-bb33-657882c156cf",
+      "span_id": "4ab8e788-7d91-4c7d-acc7-4865fad7a587",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.152724",
+      "end_time": "2026-04-02T12:43:47.156329",
+      "latency_ms": 3.605,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "POST",
+        "path": "/blog-posts/generate",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/generate",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 3.55,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.170215",
+    "data": {
+      "trace_id": "b122f7cf-e602-4612-a557-825b12fe3447",
+      "span_id": "8d8e5184-cffb-4b8f-acd4-25cd651f4154",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.170185",
+      "end_time": "2026-04-02T12:43:47.171301",
+      "latency_ms": 1.116,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 1.07,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.193924",
+    "data": {
+      "trace_id": "3356832e-99ee-4c08-af2b-809f738655e4",
+      "span_id": "9a2236d4-1cc8-43af-9478-29c9fc9d6167",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "POST /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b/publish",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.193888",
+      "end_time": "2026-04-02T12:43:47.194888",
+      "latency_ms": 1.0,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "POST",
+        "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b/publish",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b/publish",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.95,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.208167",
+    "data": {
+      "trace_id": "cf8093ae-a5e5-4409-a98c-2ee185c524e5",
+      "span_id": "ec185e1d-33da-49fc-b316-db118018397b",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.208138",
+      "end_time": "2026-04-02T12:43:47.209072",
+      "latency_ms": 0.934,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/blog-posts",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.89,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:43:47.249770",
+    "data": {
+      "trace_id": "ee8a4c1f-652a-4928-906a-140b30ac1582",
+      "span_id": "6a9d477e-7588-4b64-979a-c4f84a02cea8",
+      "parent_span_id": null,
+      "service_name": "blog-generator-demo",
+      "operation": "DELETE /blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+      "kind": "server",
+      "start_time": "2026-04-02T12:43:47.249741",
+      "end_time": "2026-04-02T12:43:47.250669",
+      "latency_ms": 0.928,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "DELETE",
+        "path": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/blog-posts/6da1b97f-1ef3-42f6-a055-3156b3f45a9b",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 0.88,
+          "downstream_ms": 0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.165071",
+    "data": {
+      "trace_id": "4f9e2be8-2ea4-4db5-8615-4102f4d31329",
+      "span_id": "cddcb105-4037-4200-ac0e-bbeca3c0ee89",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.165071",
+      "latency_ms": 1.9,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.181442",
+    "data": {
+      "trace_id": "c0412669-ca51-4f2f-b57b-43c9025ce4fc",
+      "span_id": "f5d27ff0-9b1d-4d8d-a73b-93f97baef540",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.181442",
+      "latency_ms": 3.67,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/generate",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.197927",
+    "data": {
+      "trace_id": "a6dbde78-0925-4141-9006-b47d94067bd1",
+      "span_id": "900cb2b1-8677-4f12-ae86-849fa1b32e8e",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.197927",
+      "latency_ms": 0.93,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.211578",
+    "data": {
+      "trace_id": "1a1076ac-8160-4779-bb9e-a3ce99641144",
+      "span_id": "8ba7681a-5375-4609-ae60-e43f325a53c8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d/publish",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.211578",
+      "latency_ms": 0.94,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d/publish",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.224603",
+    "data": {
+      "trace_id": "522e5018-3a44-4e50-860b-6dc3c182b410",
+      "span_id": "34a06d7a-34e4-4023-b08c-3706b4de5b90",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.224603",
+      "latency_ms": 0.95,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:50:40.248549",
+    "data": {
+      "trace_id": "4080b3bc-2e37-46bf-bc72-c1a58d3b46b8",
+      "span_id": "fab519b2-474f-46c9-8cee-9029adeebb07",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "DELETE /blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:50:40.248549",
+      "latency_ms": 0.94,
+      "status_code": 200,
+      "method": "DELETE",
+      "path": "/blog-posts/4da2e424-2f76-4013-ae4e-dff919cbf25d",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.026011",
+    "data": {
+      "trace_id": "cf707747-d279-4670-932b-27b9d2a3b7ae",
+      "span_id": "37855cbf-9a4e-4259-9df3-db9ae8467378",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.026011",
+      "latency_ms": 1.98,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.044091",
+    "data": {
+      "trace_id": "fd5eca72-46ab-4785-be9f-ab413c091ef4",
+      "span_id": "1be29383-06c8-4d26-92a2-1dc798215d88",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.044091",
+      "latency_ms": 4.03,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/generate",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.061633",
+    "data": {
+      "trace_id": "6e04c7d3-29b6-41db-9efc-ab1c65f9b0c0",
+      "span_id": "19d0c95d-8f71-43c6-a234-b1164a6ff58e",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.061633",
+      "latency_ms": 0.98,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.084860",
+    "data": {
+      "trace_id": "aa80a6b0-6d66-435d-86d8-7bcbf9e04f8e",
+      "span_id": "c9fd41cc-56f7-49f9-98b4-b8a9ce80a689",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926/publish",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.084860",
+      "latency_ms": 0.94,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926/publish",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.109875",
+    "data": {
+      "trace_id": "3f73e5fd-fa56-434a-b5af-b8adf32f5f4c",
+      "span_id": "8b17fd5b-899a-40fc-98ce-1c24adf01860",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.109875",
+      "latency_ms": 0.96,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.134845",
+    "data": {
+      "trace_id": "d0005944-85fe-490d-960b-670d78ccfb3f",
+      "span_id": "16217435-1850-44e5-a2c9-24f530ef8bdc",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "DELETE /blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.134845",
+      "latency_ms": 0.97,
+      "status_code": 200,
+      "method": "DELETE",
+      "path": "/blog-posts/2094fc95-545b-4cfe-a1e4-de6d4c739926",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.149652",
+    "data": {
+      "trace_id": "f8db1023-9c6e-4e49-af60-ec7446e52148",
+      "span_id": "e35a0d62-27e8-4e56-a451-3c047e633788",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.149652",
+      "latency_ms": 0.98,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.176878",
+    "data": {
+      "trace_id": "f9135cf2-37a9-4d93-ae82-6b894f58622f",
+      "span_id": "9f541cfb-bc7b-4178-8d93-fdf2c5904a8c",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.176878",
+      "latency_ms": 0.86,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.191032",
+    "data": {
+      "trace_id": "f748299e-7449-45cb-b6b0-fe43b5a86cba",
+      "span_id": "c5b995b3-1925-4058-8726-44088d16af59",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.191032",
+      "latency_ms": 0.91,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.214798",
+    "data": {
+      "trace_id": "8eb10014-cedb-4a9a-88f4-d09ef6454cd6",
+      "span_id": "0fc18566-992a-4e13-9433-235a3b7d8db6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.214798",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.228550",
+    "data": {
+      "trace_id": "5564ac4c-120e-43d6-aaf9-c4790d635b9e",
+      "span_id": "6aecd2ab-2f23-46ce-a6c1-3bd2dbab6db9",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.228550",
+      "latency_ms": 0.88,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.242252",
+    "data": {
+      "trace_id": "de4ca7ea-d438-4804-a1b8-9271dc5b8fe6",
+      "span_id": "4e82c59d-6061-40b4-a6ee-f348b3fdc871",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.242252",
+      "latency_ms": 1.0,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.255564",
+    "data": {
+      "trace_id": "d240a314-6a75-4c44-a48b-c3588c3eec4a",
+      "span_id": "6bd10cda-c487-41ab-8db9-a3c5a6253e4f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.255564",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.279878",
+    "data": {
+      "trace_id": "ff4ac033-9c16-4eb7-9c53-cc1841b9290a",
+      "span_id": "04fc5c97-c186-4008-89c3-298dd36d9330",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.279878",
+      "latency_ms": 0.86,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.304825",
+    "data": {
+      "trace_id": "cd54a066-cf1a-4192-b22e-fda8fecb3dc8",
+      "span_id": "4174682c-7c15-43f6-9a20-10315998ec2d",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.304825",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.328828",
+    "data": {
+      "trace_id": "379a9368-44d8-4d70-9c12-963357e9ade9",
+      "span_id": "e0b7b53f-2006-42ad-bcf6-562e00c48d77",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.328828",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.343463",
+    "data": {
+      "trace_id": "f42a73a6-abeb-4c07-af38-9177a54ec90f",
+      "span_id": "7357991c-9802-40f4-82cc-248ee661e731",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.343463",
+      "latency_ms": 0.94,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.360935",
+    "data": {
+      "trace_id": "ad05d3b5-734e-49be-bf38-730bf1db27cc",
+      "span_id": "75801299-d286-4434-bf03-4ad3c96b6aa6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.360935",
+      "latency_ms": 0.86,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.374045",
+    "data": {
+      "trace_id": "1ad21847-177b-42c3-bdf2-da9fd0abcff6",
+      "span_id": "448481dd-1631-4d39-9529-b5cf252a5dbe",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.374045",
+      "latency_ms": 0.76,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.397788",
+    "data": {
+      "trace_id": "38546521-cc79-415a-8e9b-579ee3e18baa",
+      "span_id": "5cef3baf-6bc8-4c42-8e02-cea821a2341b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.397788",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.412182",
+    "data": {
+      "trace_id": "91e34c3a-6d52-4ec2-90de-4992403c0bc6",
+      "span_id": "45c55d4e-31de-474b-9322-f48ae9c9fc83",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.412182",
+      "latency_ms": 0.89,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.426270",
+    "data": {
+      "trace_id": "da5bab24-52a6-4299-9294-b026246eda5f",
+      "span_id": "5b59d533-b963-4615-b4ea-e150f1af34c1",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.426270",
+      "latency_ms": 0.95,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.449862",
+    "data": {
+      "trace_id": "f234d7aa-650e-437a-a43a-e33c42d50a76",
+      "span_id": "5e126157-973e-4ca6-894a-ce4ecddeffe6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.449862",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.474940",
+    "data": {
+      "trace_id": "951a92fc-7bcd-4e6e-a49e-16db677ce320",
+      "span_id": "509c48a2-38d8-4bbb-a47a-06f704d129bc",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.474940",
+      "latency_ms": 1.09,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.490029",
+    "data": {
+      "trace_id": "02dc2cf9-9eec-4a84-b49a-fbf5fe60a563",
+      "span_id": "5683ad0d-83e1-4fab-8855-f26b811d0850",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.490029",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.512830",
+    "data": {
+      "trace_id": "da83d0bc-c3ab-4a74-a57c-20c056d933e5",
+      "span_id": "d4e982d9-10e0-46c6-8783-89a0694b9513",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.512830",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.529262",
+    "data": {
+      "trace_id": "ec6ace64-22d0-464d-ad8f-229fb46e7389",
+      "span_id": "c9907eba-4b54-4131-b2b9-fa89bdcde481",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.529262",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.553812",
+    "data": {
+      "trace_id": "a4797f8b-52aa-494f-8ffe-cd308bd761f8",
+      "span_id": "3065b1ef-35b3-4546-b858-a3556d1b1886",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.553812",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.568304",
+    "data": {
+      "trace_id": "9a71ef22-4e14-4f32-8d57-4efdcab2009d",
+      "span_id": "6d74d2ca-5094-4bc0-8685-160f20b7b3ed",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.568304",
+      "latency_ms": 0.76,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.581923",
+    "data": {
+      "trace_id": "73ddd03e-f32c-422c-9580-864770c33ff4",
+      "span_id": "0144e2a6-3619-4db3-903a-80b61b13cf05",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.581923",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.595583",
+    "data": {
+      "trace_id": "474afd8d-9f96-45cf-b65d-ad0f112c2b0c",
+      "span_id": "a92a5263-45c0-4a38-b636-da9a298c0b62",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.595583",
+      "latency_ms": 0.95,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.619802",
+    "data": {
+      "trace_id": "7a1aa72b-a234-495a-a00c-5f1b02fb5964",
+      "span_id": "fc6c42ec-2154-49c8-8ff4-9a996c65d81f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.619802",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.643793",
+    "data": {
+      "trace_id": "79620da4-f902-4f45-8623-5578f962c7b2",
+      "span_id": "d77fe923-0768-4f56-ac41-659fe751efcf",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.643793",
+      "latency_ms": 0.77,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.668815",
+    "data": {
+      "trace_id": "b3f4ccdc-1026-4345-a1f7-e12d7f1a3052",
+      "span_id": "b524fd4e-a7d8-4b38-a8d0-717a1394a50a",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.668815",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.693773",
+    "data": {
+      "trace_id": "4a010aba-796b-4569-b1c8-f4c0e4f7a86e",
+      "span_id": "3798b841-6f61-492c-8238-bcd2715cd3ec",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.693773",
+      "latency_ms": 0.76,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.718812",
+    "data": {
+      "trace_id": "78a0bae1-8f67-4d96-815b-96f6904d6e46",
+      "span_id": "2fb86b63-9d18-49c6-96f2-00ce38f76b96",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.718812",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.733347",
+    "data": {
+      "trace_id": "981863bc-771c-4bad-b2ef-462f98b0c137",
+      "span_id": "0940991b-cceb-461c-89ac-eaa354b8aff4",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.733347",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.757815",
+    "data": {
+      "trace_id": "ec75d6fa-50b0-46a4-8f3c-4e3c067e2f1d",
+      "span_id": "29adab4d-2faa-4122-aa50-5fa2d929d62a",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.757815",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.773166",
+    "data": {
+      "trace_id": "768e74fc-5a1c-4adf-9ab5-d4ba7af2e952",
+      "span_id": "6870b745-8a9c-47eb-a1ff-2b9953a66d80",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.773166",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.786873",
+    "data": {
+      "trace_id": "bb0576a7-a311-49a7-a9a6-a3ec045710a2",
+      "span_id": "01cc0026-2b37-4d18-abd9-b1259ffe450f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.786873",
+      "latency_ms": 0.75,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.810795",
+    "data": {
+      "trace_id": "190f1e57-b575-4ac3-bffb-c5eca64b1aa1",
+      "span_id": "1f8e46ec-0f86-4032-a3c5-abd498c7bb94",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.810795",
+      "latency_ms": 0.88,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.825349",
+    "data": {
+      "trace_id": "f75d5060-f8fd-457f-a2ab-0373f4a68716",
+      "span_id": "cc8a079d-0c58-453c-9b8a-f5aaf845f217",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.825349",
+      "latency_ms": 0.77,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.839576",
+    "data": {
+      "trace_id": "69d9a6de-e434-4f34-9c70-18cc660456dd",
+      "span_id": "14edc538-c3aa-4014-842e-4e836bf0ac25",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.839576",
+      "latency_ms": 0.72,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.854145",
+    "data": {
+      "trace_id": "018b95eb-579d-4030-a135-48411605a13a",
+      "span_id": "cc752677-a7e5-4ea5-8e15-819f54b15863",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.854145",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.869858",
+    "data": {
+      "trace_id": "ec8c5b65-cc51-4187-8aa4-08920e61d1ee",
+      "span_id": "66069b5c-cf91-458e-9289-a50c5cc022fb",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.869858",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.884572",
+    "data": {
+      "trace_id": "bf028c58-b994-454b-926a-30407e47c668",
+      "span_id": "6b9c527d-4c20-40cb-ae30-c5f78027d2e4",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.884572",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.899238",
+    "data": {
+      "trace_id": "c3e3a6b8-c3dc-4cf3-9fef-18b92cba4b0f",
+      "span_id": "3b3bbab8-72d9-41b8-b52c-2c7eb4de8874",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.899238",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.922805",
+    "data": {
+      "trace_id": "12ac12e9-1442-4f11-9944-02ae905c4da6",
+      "span_id": "e79268cb-600b-4bdf-8c1d-049d4cd1ce3c",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.922805",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.948856",
+    "data": {
+      "trace_id": "b472095a-a2c3-4fe4-b3a9-5de7f7fb3c79",
+      "span_id": "c7398525-9951-4109-9926-426458a1859f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.948856",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.974781",
+    "data": {
+      "trace_id": "97611676-7e15-4897-bc12-9c7cd895fc78",
+      "span_id": "dc2607bf-f5e7-4490-b009-37f2fa1477ab",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.974781",
+      "latency_ms": 0.75,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:47.999811",
+    "data": {
+      "trace_id": "8906008f-90e7-4607-bddd-ec826961309b",
+      "span_id": "1a0e4403-4cba-4a83-bc00-61bfbc8c0604",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:47.999811",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.025789",
+    "data": {
+      "trace_id": "d1b0bfe9-9809-47b8-a956-d89539546362",
+      "span_id": "6d7eb24d-2959-43ee-8e79-8349b9b1a785",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.025789",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.040725",
+    "data": {
+      "trace_id": "4b099f52-013c-4109-baa0-faf79c69ee17",
+      "span_id": "8e2d4a3d-865d-4f32-babc-d34514374e6d",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.040725",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.055827",
+    "data": {
+      "trace_id": "b8e6a2c9-f90a-4da2-8d4e-8eb4670507a1",
+      "span_id": "e3cdd199-ee95-47e5-a7ba-75e18721fc7b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.055827",
+      "latency_ms": 0.77,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.070400",
+    "data": {
+      "trace_id": "632eee96-97c0-460e-810b-a88b1b8d2674",
+      "span_id": "777729d7-e934-46a6-a89c-63b2e01a3494",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.070400",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.096811",
+    "data": {
+      "trace_id": "07cb4172-efa1-43c3-ae72-f6c4764b13ef",
+      "span_id": "6e42b4a2-8b7b-4d78-9361-9dd163c0ce60",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.096811",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.112212",
+    "data": {
+      "trace_id": "887b3ae5-46eb-49ff-b37f-3a26125cd62e",
+      "span_id": "13445d92-9733-461e-a9e9-b686a247f181",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.112212",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.137818",
+    "data": {
+      "trace_id": "f03aedcf-88f4-42ec-82a9-34780290e4b6",
+      "span_id": "661be7ef-e430-4720-ad0d-cf6794b7afa7",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.137818",
+      "latency_ms": 0.86,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.163796",
+    "data": {
+      "trace_id": "07bc8724-1fe6-4beb-b00f-503d380b3416",
+      "span_id": "94dcef5a-dd1d-44be-a341-b40191c9bd2b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.163796",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:52:48.189802",
+    "data": {
+      "trace_id": "3fca4c44-cc94-48c8-bd51-20a491b70450",
+      "span_id": "f03befbb-8feb-4fc2-a786-ff8710cd0540",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:52:48.189802",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.847428",
+    "data": {
+      "trace_id": "baf9bfff-0d78-428f-af17-fa5d19a5e652",
+      "span_id": "aeda8b97-6c0b-4072-bea6-b43f10047bb3",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.847428",
+      "latency_ms": 2.03,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.867641",
+    "data": {
+      "trace_id": "5c9745f8-2506-4c16-aa68-398d9d4631aa",
+      "span_id": "58ca65d9-c39a-474f-90c4-c161d2250744",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/generate",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.867641",
+      "latency_ms": 4.52,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/generate",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.888121",
+    "data": {
+      "trace_id": "0546b71a-1088-4d41-96dc-3fcf060fa9d2",
+      "span_id": "e5e3ec58-5959-476e-90c5-c2b9cec993b8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts/0d65689c-a014-4c89-b9df-d7e964802801",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.888121",
+      "latency_ms": 1.03,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts/0d65689c-a014-4c89-b9df-d7e964802801",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.908749",
+    "data": {
+      "trace_id": "2b85d453-802f-4a6e-be8f-7e0e20a3fb38",
+      "span_id": "5fa8f95f-b571-4e05-8fd8-953e9a448acd",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "POST /blog-posts/0d65689c-a014-4c89-b9df-d7e964802801/publish",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.908749",
+      "latency_ms": 0.94,
+      "status_code": 200,
+      "method": "POST",
+      "path": "/blog-posts/0d65689c-a014-4c89-b9df-d7e964802801/publish",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.925634",
+    "data": {
+      "trace_id": "5ee256ea-cd83-4080-aef4-f06ad27f27f3",
+      "span_id": "6954064f-e96c-49ee-80da-ef6d4fa4cc0f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /blog-posts",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.925634",
+      "latency_ms": 1.06,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/blog-posts",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.942372",
+    "data": {
+      "trace_id": "fed52a32-5e28-4715-9dcb-ce8ebfafb4cb",
+      "span_id": "2a906a3e-a7a6-47b7-85d8-2e976917dca6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "DELETE /blog-posts/0d65689c-a014-4c89-b9df-d7e964802801",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.942372",
+      "latency_ms": 0.96,
+      "status_code": 200,
+      "method": "DELETE",
+      "path": "/blog-posts/0d65689c-a014-4c89-b9df-d7e964802801",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.959165",
+    "data": {
+      "trace_id": "448d9b3c-aa0c-4267-b1d3-47438588406b",
+      "span_id": "6a93731f-6119-4556-97b6-ee61331ae38e",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.959165",
+      "latency_ms": 0.98,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.975120",
+    "data": {
+      "trace_id": "499fa36a-635d-4c9a-acaf-0cd9c485c13c",
+      "span_id": "e11f15b0-d3ab-4d35-99b4-32feb636c6b7",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.975120",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:00.991661",
+    "data": {
+      "trace_id": "5c9d9c4d-6c4f-4dd7-8e9b-c5672b513f9c",
+      "span_id": "48c21fab-bab8-4ad7-9be2-8476aeb8c97d",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:00.991661",
+      "latency_ms": 0.86,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.008194",
+    "data": {
+      "trace_id": "af252fc5-dee1-41e2-b458-c0416b361fcf",
+      "span_id": "51999a01-a57c-4a8c-bead-4233e83eb7d6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.008194",
+      "latency_ms": 0.9,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.025177",
+    "data": {
+      "trace_id": "ce19dd07-507d-45a7-9320-aa7aec26fb61",
+      "span_id": "bfd1eb4b-f469-41f0-add8-596deaa59e68",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.025177",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.041288",
+    "data": {
+      "trace_id": "5e4b1ae5-2ce4-4564-806a-fbcab29d5ecd",
+      "span_id": "8d61ff8c-00ed-4ae3-8a2c-8ce7da27a377",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.041288",
+      "latency_ms": 1.06,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.058632",
+    "data": {
+      "trace_id": "45baef8f-072a-4ded-b61f-6f6ffc709307",
+      "span_id": "66aff88a-d145-4acd-ab35-35b43107eea7",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.058632",
+      "latency_ms": 0.9,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.085860",
+    "data": {
+      "trace_id": "ca228c05-4b8d-458b-98f5-01eff598b9d0",
+      "span_id": "fc5a59be-e0f9-4389-9011-90cd409827fe",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.085860",
+      "latency_ms": 0.85,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.103380",
+    "data": {
+      "trace_id": "db59f821-8fb6-4624-81ba-d94cba450c13",
+      "span_id": "f237f449-384f-4657-8d67-8c1f00f5b59b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.103380",
+      "latency_ms": 1.05,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.120642",
+    "data": {
+      "trace_id": "011b3097-5e19-4817-a291-3453dd409660",
+      "span_id": "b1130251-65bd-4388-89c2-b6bda53dbc70",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.120642",
+      "latency_ms": 1.06,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.148845",
+    "data": {
+      "trace_id": "48898ab1-8739-443e-8335-2c665abca289",
+      "span_id": "c5fcb833-a2a0-46ec-8f2b-73f70bc669dd",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.148845",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.165533",
+    "data": {
+      "trace_id": "b7de8d2f-04f7-40b3-a23b-8b6935bd2612",
+      "span_id": "085464df-8de1-4501-b354-4c19c824bdd8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.165533",
+      "latency_ms": 0.87,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.191849",
+    "data": {
+      "trace_id": "293d1c13-ac27-4f0c-8826-125871ce61dc",
+      "span_id": "f27cac8f-28d1-4e39-a393-234b931671b5",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.191849",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.218824",
+    "data": {
+      "trace_id": "94d03f85-4f0f-42a3-b28c-7b9ba6c6f6e2",
+      "span_id": "e2a9920e-d872-403c-8a97-b5891253babd",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.218824",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.245822",
+    "data": {
+      "trace_id": "9cdc3cb1-f4d8-4373-bc42-73859c507f29",
+      "span_id": "1276bdac-7dcc-4765-9225-8e94ecc7aee5",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.245822",
+      "latency_ms": 1.02,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.262995",
+    "data": {
+      "trace_id": "037a94ee-34a6-492b-8f87-b21135f18b93",
+      "span_id": "03ce9e6b-ebd5-4725-916f-75e999636232",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.262995",
+      "latency_ms": 1.01,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.289798",
+    "data": {
+      "trace_id": "a904bead-2128-4212-acf5-572fe1ce101b",
+      "span_id": "d48f0e9d-95af-401a-b84d-3ac4b207e565",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.289798",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.316812",
+    "data": {
+      "trace_id": "0c56c775-72f4-4c4f-a133-a35e30ca16a8",
+      "span_id": "fb7653f9-1241-400e-8acc-9c64410faf77",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.316812",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.343799",
+    "data": {
+      "trace_id": "fecacd67-c013-4b22-979c-53c03b24b49a",
+      "span_id": "bbad2529-16f5-4b1c-a591-7d6757a23adc",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.343799",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.370848",
+    "data": {
+      "trace_id": "d047d323-d45b-45f8-ae64-3db9dcadffe7",
+      "span_id": "12c4c0db-4480-4396-97b6-746ed05721ed",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.370848",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.398835",
+    "data": {
+      "trace_id": "2a042b94-b6d4-4b48-bd67-78bf6a76daef",
+      "span_id": "5a4e0439-48d9-4fd1-bcff-eb2d8e750d35",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.398835",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.415395",
+    "data": {
+      "trace_id": "98008e67-35c8-48a3-9de9-847427db530c",
+      "span_id": "9576c71b-b6f6-4fb6-aea5-5a068bcff6b8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.415395",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.432205",
+    "data": {
+      "trace_id": "a417657a-8f4c-4a89-9428-565d6ca8d422",
+      "span_id": "b2631e5b-5f9e-4beb-8b65-40c45e0aaeb8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.432205",
+      "latency_ms": 0.96,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.448847",
+    "data": {
+      "trace_id": "cfc1b1bf-ddf0-494c-bc46-071a272e8a1d",
+      "span_id": "72b0cbd8-9680-497c-84ab-4c85857487d8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.448847",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.475800",
+    "data": {
+      "trace_id": "7f2930be-6d32-4a5f-808b-a66783fd0d45",
+      "span_id": "8e94e396-1074-43ab-8350-a89a0cdf12f0",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.475800",
+      "latency_ms": 0.77,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.502828",
+    "data": {
+      "trace_id": "88020510-a0c8-4e0d-b897-c686f8d39cac",
+      "span_id": "b02d5efc-0887-47ff-a758-020424a6a0ea",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.502828",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.520134",
+    "data": {
+      "trace_id": "c532fb6a-c1fb-4ab7-8ba1-c00c33186526",
+      "span_id": "eb484558-fc7a-43b0-bff9-1e5bd0338cf3",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.520134",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.545931",
+    "data": {
+      "trace_id": "e645a2c1-2bed-45f9-9c7b-8fc39531f980",
+      "span_id": "dc40c946-bdbc-4dde-8dcd-e5bcf39124e6",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.545931",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.563312",
+    "data": {
+      "trace_id": "86f10de4-3551-408b-94c7-726319455c1d",
+      "span_id": "f1a5a8a9-4e10-4080-8272-cc948671ef23",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.563312",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.580038",
+    "data": {
+      "trace_id": "e8668dbb-8331-4e8d-9f05-7f932a0ff15b",
+      "span_id": "2bff4b4a-7f05-487d-bbc9-c4d9fac04630",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.580038",
+      "latency_ms": 0.96,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.607846",
+    "data": {
+      "trace_id": "9fd01396-2729-42b2-a636-5fb89a98e88f",
+      "span_id": "ca2662a2-d5e8-4cd4-99d4-67feb2d8261b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.607846",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.635855",
+    "data": {
+      "trace_id": "59758e21-310b-43aa-aac2-d8e106a18407",
+      "span_id": "5fc1b924-6157-4fdf-b0a0-578c11d0855e",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.635855",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.663862",
+    "data": {
+      "trace_id": "aaa4288c-5f50-4fc5-872d-0b024202bc1b",
+      "span_id": "0bc16f20-5593-4499-ab87-23364bfd47f1",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.663862",
+      "latency_ms": 0.85,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.691842",
+    "data": {
+      "trace_id": "028f1a45-8e66-4fe4-afe0-da5607982d06",
+      "span_id": "41bf45b9-3b0f-4ad1-bcbc-66cf1e55aba9",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.691842",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.719837",
+    "data": {
+      "trace_id": "e95b4ce7-1d45-4293-8b3b-f45846cbcc69",
+      "span_id": "b7834852-ae20-4ceb-a56e-d4b0f207e833",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.719837",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.746836",
+    "data": {
+      "trace_id": "076a1330-f7cd-456a-bff7-762a33f2d6b0",
+      "span_id": "8824a8a6-7a8d-401f-8160-942dbe52890e",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.746836",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.764490",
+    "data": {
+      "trace_id": "64264cb5-8a3a-45c2-b392-0adbe1c018df",
+      "span_id": "1dbb3e66-e09e-4074-8f67-c9a68eaeba93",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.764490",
+      "latency_ms": 0.84,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.791825",
+    "data": {
+      "trace_id": "2c08b260-efb2-4cb5-a60b-aeaaf55b1726",
+      "span_id": "75bae69d-6f51-46b3-9e39-0965ef85fa18",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.791825",
+      "latency_ms": 0.91,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.809327",
+    "data": {
+      "trace_id": "4894793b-cb25-400f-865f-28b4a1d7d5a1",
+      "span_id": "5e0bc156-e6a3-447c-996f-0eacc789b42a",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.809327",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.825870",
+    "data": {
+      "trace_id": "8bc61a68-3178-428d-abda-0cf72e74097c",
+      "span_id": "50e2cec0-1837-437d-9849-13ec6500f92b",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.825870",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.842591",
+    "data": {
+      "trace_id": "d815fc46-c05c-4731-ab3f-7bb8ea723477",
+      "span_id": "6c4b1666-08b6-413f-9841-13e60fe09efb",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.842591",
+      "latency_ms": 0.75,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.858866",
+    "data": {
+      "trace_id": "30a96cd8-e3db-4a8c-a01b-6c34b324da8b",
+      "span_id": "16791d84-d1eb-401e-9337-24a1ce69904f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.858866",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.886842",
+    "data": {
+      "trace_id": "2b87d74c-9208-4ad4-997c-f28141db8691",
+      "span_id": "5d36b000-865d-476c-9c94-7245b482d7c4",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.886842",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.904134",
+    "data": {
+      "trace_id": "58023121-0b80-41be-9875-e74cfa251de6",
+      "span_id": "7d9a9424-58dc-4337-a2f1-d443213d1fa7",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.904134",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.921577",
+    "data": {
+      "trace_id": "76e74e42-6fc3-49ed-bbe1-76efb6bd0bf3",
+      "span_id": "a2720f30-3cda-4263-bbe9-588344e2a923",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.921577",
+      "latency_ms": 0.78,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.949698",
+    "data": {
+      "trace_id": "f1a3b63e-fa1e-4da7-bb3d-a36e5d3e08e2",
+      "span_id": "b583159d-4143-4733-8e93-503f27c37f39",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.949698",
+      "latency_ms": 0.83,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:01.977804",
+    "data": {
+      "trace_id": "843239e9-a887-4efd-a221-43525a80a315",
+      "span_id": "49fedd65-887d-43d9-9d4f-61d05ba977ff",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:01.977804",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.004857",
+    "data": {
+      "trace_id": "e110725f-8772-4fbd-a2e8-e0afbf42a943",
+      "span_id": "71bcb242-b4ac-4c6e-98f2-b40be8e4931f",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.004857",
+      "latency_ms": 0.85,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.032836",
+    "data": {
+      "trace_id": "d47301bc-5c62-4b8c-b7d5-37526ad780bc",
+      "span_id": "64e71681-9198-4fa9-aead-c7eb2be93852",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.032836",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.050707",
+    "data": {
+      "trace_id": "89452fa8-f6cb-4a2b-b84c-9985896dd8c0",
+      "span_id": "226f616c-9536-4393-96bb-5c80ce7f89ef",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.050707",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.068118",
+    "data": {
+      "trace_id": "9f7e1a16-d587-49e4-8c72-53d8fdd3ef63",
+      "span_id": "70eb5584-5143-47d0-9a6e-f2226c4c6898",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.068118",
+      "latency_ms": 0.75,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.085884",
+    "data": {
+      "trace_id": "73c66c58-6aff-434e-8dcd-045f8df4ae5a",
+      "span_id": "494dbe8c-b3f5-49f1-88cb-4cdca58a9f63",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.085884",
+      "latency_ms": 0.79,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.103194",
+    "data": {
+      "trace_id": "3a392534-c20e-40dc-9aac-215a276cc8e2",
+      "span_id": "43ee8396-0a76-4149-8484-ea7ad562f8aa",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.103194",
+      "latency_ms": 0.81,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.120785",
+    "data": {
+      "trace_id": "a298ac73-819f-4d99-9d50-07aeb45a0c31",
+      "span_id": "17ea4fb8-f9f1-4660-a6b7-94dcb0dd67c8",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.120785",
+      "latency_ms": 0.82,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:54:02.137900",
+    "data": {
+      "trace_id": "7e4a661c-8737-4827-9b31-358f1c7e2945",
+      "span_id": "6471375b-63c1-4506-b67c-2a61499a6530",
+      "parent_id": null,
+      "service": "blog-demo",
+      "operation": "GET /health",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:54:02.137900",
+      "latency_ms": 0.8,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/health",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  }
+]

@@ -1,0 +1,67 @@
+# Database
+nexarch.db
+*.db
+*.sqlite
+*.sqlite3
+
+storage/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+api_keys.txt
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+
+# Azure
+.azure/

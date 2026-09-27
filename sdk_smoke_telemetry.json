@@ -1,0 +1,146 @@
+[
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:35:55.555909",
+    "data": {
+      "trace_id": "e3e1d193-9bcf-46ef-abb2-be8b59984ea8",
+      "span_id": "8a28cb29-8d95-4452-b30a-85d122be5c1a",
+      "parent_id": null,
+      "service": "sdk-smoke-app",
+      "operation": "GET /",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:35:55.555909",
+      "latency_ms": 2.0,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:35:55.561902",
+    "data": {
+      "trace_id": "1249bf64-9d6f-42d7-a815-828cd747f58e",
+      "span_id": "dfbde327-42e5-40eb-9704-f05a81a4fbeb",
+      "parent_id": null,
+      "service": "sdk-smoke-app",
+      "operation": "GET /users/42",
+      "kind": "server",
+      "timestamp": "2026-04-02T12:35:55.561902",
+      "latency_ms": 2.0,
+      "status_code": 200,
+      "method": "GET",
+      "path": "/users/42",
+      "query_params": {},
+      "status": "ok",
+      "error": null,
+      "downstream": []
+    }
+  },
+  {
+    "type": "architecture_discovery",
+    "timestamp": "2026-04-02T12:35:55.555909",
+    "data": {
+      "service_name": "sdk-smoke-app",
+      "service_type": "microservice",
+      "endpoints": [
+        {
+          "error": "Failed to discover endpoints: 'ExceptionMiddleware' object has no attribute 'routes'"
+        }
+      ],
+      "databases": [
+        {
+          "type": "cache",
+          "engine": "redis",
+          "discovered_from": "import:redis"
+        },
+        {
+          "type": "document",
+          "engine": "mongodb",
+          "discovered_from": "import:pymongo"
+        }
+      ],
+      "external_services": [],
+      "dependencies": {},
+      "architecture_patterns": {
+        "service_type": "mini-service",
+        "has_api_gateway": false,
+        "database_pattern": "database_per_service",
+        "has_circuit_breaker": false,
+        "has_rate_limiting": false,
+        "has_caching": true,
+        "has_authentication": false,
+        "middleware_stack": []
+      },
+      "discovered_at": "2026-04-02T12:35:55.555909"
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:35:55.555909",
+    "data": {
+      "trace_id": "e3e1d193-9bcf-46ef-abb2-be8b59984ea8",
+      "span_id": "8a28cb29-8d95-4452-b30a-85d122be5c1a",
+      "parent_span_id": null,
+      "service_name": "sdk-smoke-app",
+      "operation": "GET /",
+      "kind": "server",
+      "start_time": "2026-04-02T12:35:55.555909",
+      "end_time": "2026-04-02T12:35:55.557907",
+      "latency_ms": 1.9980000000000002,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 2.0,
+          "downstream_ms": 0.0
+        }
+      }
+    }
+  },
+  {
+    "type": "span",
+    "timestamp": "2026-04-02T12:35:55.561902",
+    "data": {
+      "trace_id": "1249bf64-9d6f-42d7-a815-828cd747f58e",
+      "span_id": "dfbde327-42e5-40eb-9704-f05a81a4fbeb",
+      "parent_span_id": null,
+      "service_name": "sdk-smoke-app",
+      "operation": "GET /users/42",
+      "kind": "server",
+      "start_time": "2026-04-02T12:35:55.561902",
+      "end_time": "2026-04-02T12:35:55.563902",
+      "latency_ms": 2.0,
+      "status_code": 200,
+      "error": null,
+      "tags": {
+        "method": "GET",
+        "path": "/users/42",
+        "query_params": {}
+      },
+      "downstream_dependencies": [],
+      "architecture_metadata": {
+        "endpoint_pattern": "/users/42",
+        "calls_database": false,
+        "calls_external": false,
+        "latency_breakdown": {
+          "total_ms": 2.0,
+          "downstream_ms": 0.0
+        }
+      }
+    }
+  }
+]
